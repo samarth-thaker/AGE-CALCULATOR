@@ -22,9 +22,9 @@
     
     let userInput = document.getElementById("date");
     let result = document.getElementById("result");
-    userInput.ariaValueMax = new Date().toISOString().split('T')[0];
+    userInput.max = new Date().toISOString().split('T')[0];
     function CalculateAge(){
-        let birthDate =  new Date(usetInput.value);
+        let birthDate =  new Date(userInput.value);
         let d1 = birthDate.getDate();
         let m1 = birthDate.getMonth()+1;
         let y1 = birthDate.getFullYear();
@@ -50,7 +50,7 @@
             m3 = 11;
             y3--;
         }
-        result.innerHTML = `You are $(y3) years, $(m3) months, $(d3) days old.`;
+        result.innerHTML = `You are ${y3} years, ${m3} months and ${d3}days`;
 }
 function getDaysInMonth(year, month){
     return  new Date(year, month, 0).getDate();
